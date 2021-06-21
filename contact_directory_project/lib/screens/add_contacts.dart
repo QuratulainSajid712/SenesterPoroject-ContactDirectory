@@ -7,7 +7,7 @@ class AddContacts extends StatefulWidget {
 }
 
 class _AddContactsState extends State<AddContacts> {
-  TextEditingController _nameController, _numberController;
+  TextEditingController _nameController, _numberController, _batchController,_emailController,_skillController,_locationController;
   String _typeSelected ='';
 
   DatabaseReference _ref;
@@ -17,6 +17,10 @@ class _AddContactsState extends State<AddContacts> {
     super.initState();
     _nameController = TextEditingController();
     _numberController = TextEditingController();
+    _batchController =  TextEditingController();
+    _emailController= TextEditingController();
+    _skillController =  TextEditingController();
+    _locationController= TextEditingController();
     _ref = FirebaseDatabase.instance.reference().child('Contacts');
   }
 
@@ -75,6 +79,62 @@ class _AddContactsState extends State<AddContacts> {
               controller: _numberController,
               decoration: InputDecoration(
                 hintText: 'Enter Number',
+                prefixIcon: Icon(
+                  Icons.phone_iphone,
+                  size: 30,
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                contentPadding: EdgeInsets.all(15),
+              ),
+            ),
+            SizedBox(height: 15),
+            TextFormField(
+              controller: _batchController,
+              decoration: InputDecoration(
+                hintText: 'Enter Batch',
+                prefixIcon: Icon(
+                  Icons.phone_iphone,
+                  size: 30,
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                contentPadding: EdgeInsets.all(15),
+              ),
+            ),
+            SizedBox(height: 15),
+            TextFormField(
+              controller: _emailController,
+              decoration: InputDecoration(
+                hintText: 'Enter Email',
+                prefixIcon: Icon(
+                  Icons.phone_iphone,
+                  size: 30,
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                contentPadding: EdgeInsets.all(15),
+              ),
+            ),
+            SizedBox(height: 15),
+            TextFormField(
+              controller: _skillController,
+              decoration: InputDecoration(
+                hintText: 'Enter Skill',
+                prefixIcon: Icon(
+                  Icons.phone_iphone,
+                  size: 30,
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                contentPadding: EdgeInsets.all(15),
+              ),
+            ),
+            SizedBox(height: 15),
+            TextFormField(
+              controller: _locationController,
+              decoration: InputDecoration(
+                hintText: 'Enter Location',
                 prefixIcon: Icon(
                   Icons.phone_iphone,
                   size: 30,
