@@ -32,6 +32,8 @@ dependencies:
   firebase_core: ^0.4.5
   firebase_auth: ^0.16.0
   cloud_firestore: ^0.13.5
+  contacts_service: ^0.3.10
+  permission_handler: ^5.0.1+1
 
 
 dev_dependencies:
