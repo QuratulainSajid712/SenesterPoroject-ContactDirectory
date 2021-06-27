@@ -1,5 +1,8 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
+import 'package:firebase_core/firebase_core.dart';
+import 'package:firebase_auth/firebase_auth.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 
 class AddContacts extends StatefulWidget {
   @override
@@ -94,7 +97,7 @@ class _AddContactsState extends State<AddContacts> {
               decoration: InputDecoration(
                 hintText: 'Enter Batch',
                 prefixIcon: Icon(
-                  Icons.phone_iphone,
+                  Icons.account_box_sharp,
                   size: 30,
                 ),
                 fillColor: Colors.white,
@@ -108,7 +111,7 @@ class _AddContactsState extends State<AddContacts> {
               decoration: InputDecoration(
                 hintText: 'Enter Email',
                 prefixIcon: Icon(
-                  Icons.phone_iphone,
+                  Icons.mail,
                   size: 30,
                 ),
                 fillColor: Colors.white,
@@ -122,7 +125,7 @@ class _AddContactsState extends State<AddContacts> {
               decoration: InputDecoration(
                 hintText: 'Enter Skill',
                 prefixIcon: Icon(
-                  Icons.phone_iphone,
+                  Icons.architecture_sharp,
                   size: 30,
                 ),
                 fillColor: Colors.white,
@@ -136,7 +139,7 @@ class _AddContactsState extends State<AddContacts> {
               decoration: InputDecoration(
                 hintText: 'Enter Location',
                 prefixIcon: Icon(
-                  Icons.phone_iphone,
+                  Icons.add_location_alt,
                   size: 30,
                 ),
                 fillColor: Colors.white,
@@ -189,10 +192,19 @@ class _AddContactsState extends State<AddContacts> {
 
     String name = _nameController.text;
     String number = _numberController.text;
+    String batch= _batchController.text;
+    String email= _emailController.text;
+    String skill= _skillController.text;
+    String location= _locationController.text;
 
     Map<String,String> contact = {
       'name':name,
       'number': '+92 ' + number,
+      'batch': batch,
+      'email': email,
+      'skill': skill,
+      'location':location,
+
       'type': _typeSelected,
     };
 

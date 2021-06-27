@@ -1,6 +1,5 @@
-import 'package:contact_directory_project/screens/contacts.dart';
 import 'package:flutter/material.dart';
-
+import 'package:contact_directory/screens/contacts.dart';
 
 void main() {
   runApp(MyApp());
@@ -12,7 +11,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       debugShowCheckedModeBanner: false,
-      title: 'Contact Directory',
+      title: 'Flutter Database',
       theme: ThemeData(
         primaryColor: Colors.deepPurple,
         accentColor: Colors.redAccent,

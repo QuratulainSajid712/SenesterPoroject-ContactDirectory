@@ -1,8 +1,5 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:flutter/material.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 
 class EditContact extends StatefulWidget {
   String contactKey;
@@ -14,8 +11,8 @@ class EditContact extends StatefulWidget {
 }
 
 class _EditContactState extends State<EditContact> {
-  TextEditingController _nameController, _numberController,_batchController,_emailController,_skillController,_locationController;
-  String _typeSelected = '';
+  TextEditingController _nameController, _numberController, _batchController,_emailController,_skillController,_locationController;
+  String _typeSelected ='';
 
   DatabaseReference _ref;
   @override
@@ -205,10 +202,10 @@ class _EditContactState extends State<EditContact> {
     _nameController.text = contact['name'];
 
     _numberController.text = contact['number'];
-    _batchController.text= contact['batch'];
-    _emailController.text= contact['email'];
-    _skillController.text= contact['skill'];
-    _locationController.text= contact['location'];
+    _batchController.text = contact['batch'];
+    _emailController.text = contact['email'];
+    _skillController.text = contact['skill'];
+    _locationController.text = contact['location'];
 
     setState(() {
       _typeSelected = contact['type'];
@@ -223,15 +220,16 @@ class _EditContactState extends State<EditContact> {
     String skill= _skillController.text;
     String location= _locationController.text;
 
-    Map<String, String> contact = {
-      'name': name,
-      'number':  number,
+    Map<String,String> contact = {
+      'name':name,
+      'number': '+92 ' + number,
       'batch': batch,
       'email': email,
       'skill': skill,
       'location':location,
       'type': _typeSelected,
     };
+
 
     _ref.child(widget.contactKey).update(contact).then((value) {
       Navigator.pop(context);

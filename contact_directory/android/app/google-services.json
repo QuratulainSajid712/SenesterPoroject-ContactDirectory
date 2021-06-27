@@ -8,6 +8,43 @@
   "client": [
     {
       "client_info": {
+        "mobilesdk_app_id": "1:16527311920:android:b1a868fc1c014a5eb159f5",
+        "android_client_info": {
+          "package_name": "com.example.contact_directory"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "16527311920-9nq3n2j9ps4n09d6r0rbipt718sb44k2.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.example.contact_directory",
+            "certificate_hash": "214fb1ce5a0cb32bdcc2ebd230d66ebf5f65b376"
+          }
+        },
+        {
+          "client_id": "16527311920-q6a5ms7um6dr87a1n1gbknmlc2f8q57p.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAZLzrCnvnwBGKsuh7qEnPNwDHMfBFTVx0"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "16527311920-q6a5ms7um6dr87a1n1gbknmlc2f8q57p.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    },
+    {
+      "client_info": {
         "mobilesdk_app_id": "1:16527311920:android:bca44f328f885798b159f5",
         "android_client_info": {
           "package_name": "com.example.contact_directory_project"

@@ -1,12 +1,8 @@
 import 'package:firebase_database/firebase_database.dart';
 import 'package:firebase_database/ui/firebase_animated_list.dart';
 import 'package:flutter/material.dart';
-import 'package:contact_directory_project/screens/add_contacts.dart';
-import 'package:contact_directory_project/screens/edit_contacts.dart';
-import 'package:firebase_core/firebase_core.dart';
-import 'package:firebase_auth/firebase_auth.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
-import 'edit_contacts.dart';
+import 'package:contact_directory/screens/add_contacts.dart';
+import 'package:contact_directory/screens/edit_contact.dart';
 
 class Contacts extends StatefulWidget {
   @override
