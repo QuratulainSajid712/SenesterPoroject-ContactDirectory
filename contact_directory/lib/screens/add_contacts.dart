@@ -7,7 +7,7 @@ class AddContacts extends StatefulWidget {
 }
 
 class _AddContactsState extends State<AddContacts> {
-  TextEditingController _nameController, _numberController, _batchController,_emailController,_skillController,_locationController;
+  TextEditingController _nameController, _numberController, _batchController,_emailController,_skillController,_locationController,_descriptionController;
   String _typeSelected ='';
 
   DatabaseReference _ref;
@@ -21,6 +21,7 @@ class _AddContactsState extends State<AddContacts> {
     _emailController= TextEditingController();
     _skillController =  TextEditingController();
     _locationController= TextEditingController();
+    _descriptionController= TextEditingController();
     _ref = FirebaseDatabase.instance.reference().child('Contacts');
   }
 
@@ -145,6 +146,20 @@ class _AddContactsState extends State<AddContacts> {
               ),
             ),
             SizedBox(height: 15,),
+            TextFormField(
+              controller: _descriptionController,
+              decoration: InputDecoration(
+                hintText: 'Description',
+                prefixIcon: Icon(
+                  Icons.app_settings_alt_sharp,
+                  size: 30,
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                contentPadding: EdgeInsets.all(15),
+              ),
+            ),
+            SizedBox(height: 15,),
             Container(
               height: 40,
               child: ListView(
@@ -193,7 +208,7 @@ class _AddContactsState extends State<AddContacts> {
     String email= _emailController.text;
     String skill= _skillController.text;
     String location= _locationController.text;
-
+    String description= _descriptionController.text;
     Map<String,String> contact = {
       'name':name,
       'number': '+92 ' + number,
@@ -201,6 +216,7 @@ class _AddContactsState extends State<AddContacts> {
       'email': email,
       'skill': skill,
       'location':location,
+      'description': description,
       'type': _typeSelected,
     };
 

@@ -11,7 +11,7 @@ class EditContact extends StatefulWidget {
 }
 
 class _EditContactState extends State<EditContact> {
-  TextEditingController _nameController, _numberController, _batchController,_emailController,_skillController,_locationController;
+  TextEditingController _nameController, _numberController, _batchController,_emailController,_skillController,_locationController,_descriptionController;
   String _typeSelected ='';
 
   DatabaseReference _ref;
@@ -25,6 +25,7 @@ class _EditContactState extends State<EditContact> {
     _emailController= TextEditingController();
     _skillController =  TextEditingController();
     _locationController= TextEditingController();
+    _descriptionController= TextEditingController();
     _ref = FirebaseDatabase.instance.reference().child('Contacts');
     getContactDetail();
   }
@@ -149,6 +150,20 @@ class _EditContactState extends State<EditContact> {
                 contentPadding: EdgeInsets.all(15),
               ),
             ),
+            SizedBox(height: 15,),
+            TextFormField(
+              controller: _descriptionController,
+              decoration: InputDecoration(
+                hintText: 'Description',
+                prefixIcon: Icon(
+                  Icons.app_settings_alt_sharp,
+                  size: 30,
+                ),
+                fillColor: Colors.white,
+                filled: true,
+                contentPadding: EdgeInsets.all(15),
+              ),
+            ),
             SizedBox(
               height: 15,
             ),
@@ -219,6 +234,7 @@ class _EditContactState extends State<EditContact> {
     String email= _emailController.text;
     String skill= _skillController.text;
     String location= _locationController.text;
+    String description= _descriptionController.text;
 
     Map<String,String> contact = {
       'name':name,
@@ -227,6 +243,7 @@ class _EditContactState extends State<EditContact> {
       'email': email,
       'skill': skill,
       'location':location,
+      'description':description,
       'type': _typeSelected,
     };
 
